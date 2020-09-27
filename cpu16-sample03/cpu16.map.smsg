@@ -1,0 +1,6 @@
+Warning (10268): Verilog HDL information at Control.v(20): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at DataMem.v(46): object "dataadr" differs only in case from object "Dataadr" in the same scope
+Info (10281): Verilog HDL Declaration information at DataMem.v(47): object "writedata" differs only in case from object "Writedata" in the same scope
+Info (10281): Verilog HDL Declaration information at Registers.v(7): object "wrenable" differs only in case from object "Wrenable" in the same scope
+Info (10281): Verilog HDL Declaration information at Registers.v(5): object "write_adr1" differs only in case from object "Write_adr1" in the same scope
+Info (10281): Verilog HDL Declaration information at Registers.v(6): object "writedata1" differs only in case from object "Writedata1" in the same scope

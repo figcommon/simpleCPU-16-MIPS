@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Sep 27 12:46:44 2020
+Quartus II Version : 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition
+Revision Name : cpu16
+Top-level Entity Name : cpu16
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 480 / 1,270 ( 38 % )
+Total pins : 76 / 116 ( 66 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

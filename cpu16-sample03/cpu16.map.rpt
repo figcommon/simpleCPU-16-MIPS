@@ -1,0 +1,565 @@
+Analysis & Synthesis report for cpu16
+Sun Sep 27 12:46:42 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++-----------------------------+----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Sep 27 12:46:42 2020        ;
+; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name               ; cpu16                                        ;
+; Top-level Entity Name       ; cpu16                                        ;
+; Family                      ; MAX II                                       ;
+; Total logic elements        ; 604                                          ;
+; Total pins                  ; 76                                           ;
+; Total virtual pins          ; 0                                            ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
++-----------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                        ; cpu16              ; cpu16              ;
+; Family name                                                  ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                   ;
++----------------------------------+-----------------+------------------------------------+--------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path   ;
++----------------------------------+-----------------+------------------------------------+--------------------------------+
+; Control.v                        ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/Control.v        ;
+; select1.v                        ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/select1.v        ;
+; alu.v                            ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/alu.v            ;
+; DataMem.v                        ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/DataMem.v        ;
+; InstructionMem.v                 ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/InstructionMem.v ;
+; Pc.v                             ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/Pc.v             ;
+; Registers.v                      ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/Registers.v      ;
+; SignExtender.v                   ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/SignExtender.v   ;
+; headfile.v                       ; yes             ; User Verilog HDL File              ; D:/下载/cpu16/headfile.v       ;
+; cpu16.bdf                        ; yes             ; User Block Diagram/Schematic File  ; D:/下载/cpu16/cpu16.bdf        ;
++----------------------------------+-----------------+------------------------------------+--------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 604   ;
+;     -- Combinational with no register       ; 437   ;
+;     -- Register only                        ; 155   ;
+;     -- Combinational with a register        ; 12    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 324   ;
+;     -- 3 input functions                    ; 103   ;
+;     -- 2 input functions                    ; 15    ;
+;     -- 1 input functions                    ; 6     ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 569   ;
+;     -- arithmetic mode                      ; 35    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 5     ;
+;     -- asynchronous clear/load mode         ; 5     ;
+;                                             ;       ;
+; Total registers                             ; 167   ;
+; Total logic cells in carry chains           ; 38    ;
+; I/O pins                                    ; 76    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 167   ;
+; Total fan-out                               ; 2206  ;
+; Average fan-out                             ; 3.24  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                          ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name         ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+; |cpu16                     ; 604 (1)     ; 167          ; 0          ; 76   ; 0            ; 437 (1)      ; 155 (0)           ; 12 (0)           ; 38 (0)          ; 0 (0)      ; |cpu16                      ; work         ;
+;    |Control:inst2|         ; 52 (52)     ; 0            ; 0          ; 0    ; 0            ; 52 (52)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu16|Control:inst2        ; work         ;
+;    |DataMem:inst3|         ; 103 (103)   ; 66           ; 0          ; 0    ; 0            ; 37 (37)      ; 61 (61)           ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |cpu16|DataMem:inst3        ; work         ;
+;    |InstructionMem:inst4|  ; 23 (23)     ; 0            ; 0          ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu16|InstructionMem:inst4 ; work         ;
+;    |Pc:inst5|              ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 5 (5)           ; 0 (0)      ; |cpu16|Pc:inst5             ; work         ;
+;    |Registers:inst6|       ; 212 (212)   ; 96           ; 0          ; 0    ; 0            ; 116 (116)    ; 94 (94)           ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |cpu16|Registers:inst6      ; work         ;
+;    |alu:inst|              ; 190 (190)   ; 0            ; 0          ; 0    ; 0            ; 190 (190)    ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |cpu16|alu:inst             ; work         ;
+;    |select1:inst7|         ; 18 (18)     ; 0            ; 0          ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu16|select1:inst7        ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                  ;
++-----------------------------------------------------+-----------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal   ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------+------------------------+
+; alu:inst|a[15]                                      ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[14]                                      ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[13]                                      ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[12]                                      ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[11]                                      ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[10]                                      ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[9]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[8]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[7]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[6]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[5]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[4]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[3]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[2]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[1]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; alu:inst|a[0]                                       ; alu:inst|a[15]~288    ; yes                    ;
+; Control:inst2|jump_adr[1]                           ; Control:inst2|Equal14 ; yes                    ;
+; Control:inst2|jump_adr[2]                           ; Control:inst2|Equal14 ; yes                    ;
+; Control:inst2|jump_adr[3]                           ; Control:inst2|Equal14 ; yes                    ;
+; Number of user-specified and inferred latches = 19  ;                       ;                        ;
++-----------------------------------------------------+-----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; DataMem:inst3|Dataadr[2]               ; Stuck at GND due to stuck port data_in      ;
+; DataMem:inst3|mem~64                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~65                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~66                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~67                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~68                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~69                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~70                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~71                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~72                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~73                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~74                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~75                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~76                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~77                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~78                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~79                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~80                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~81                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~82                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~83                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~84                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~85                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~86                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~87                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~88                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~89                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~90                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~91                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~92                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~93                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~94                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~95                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~96                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~97                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~98                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~99                   ; Lost fanout                                 ;
+; DataMem:inst3|mem~100                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~101                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~102                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~103                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~104                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~105                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~106                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~107                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~108                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~109                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~110                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~111                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~112                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~113                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~114                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~115                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~116                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~117                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~118                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~119                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~120                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~121                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~122                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~123                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~124                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~125                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~126                  ; Lost fanout                                 ;
+; DataMem:inst3|mem~127                  ; Lost fanout                                 ;
+; Registers:inst6|Regsmem~111            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~127            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~110            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~126            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~109            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~125            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~108            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~124            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~107            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~123            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~106            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~122            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~105            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~121            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~104            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~120            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~103            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~119            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~102            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~118            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~101            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~117            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~100            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~116            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~99             ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~115            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~98             ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~114            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~97             ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~113            ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~96             ; Stuck at GND due to stuck port clock_enable ;
+; Registers:inst6|Regsmem~112            ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 97 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 167   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 160   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |cpu16|select1:inst7|r2[3]   ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |cpu16|select1:inst7|r2[9]   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |cpu16|select1:inst7|r2[0]   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |cpu16|alu:inst|Add0         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |cpu16|Control:inst2|adrD[1] ;
+; 18:1               ; 14 bits   ; 168 LEs       ; 84 LEs               ; 84 LEs                 ; No         ; |cpu16|alu:inst|a[3]~274     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sun Sep 27 12:46:39 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpu16 -c cpu16
+Info: Found 1 design units, including 1 entities, in source file Control.v
+    Info: Found entity 1: Control
+Info: Found 1 design units, including 1 entities, in source file select1.v
+    Info: Found entity 1: select1
+Info: Found 1 design units, including 1 entities, in source file alu.v
+    Info: Found entity 1: alu
+Info: Found 1 design units, including 1 entities, in source file DataMem.v
+    Info: Found entity 1: DataMem
+Info: Found 1 design units, including 1 entities, in source file InstructionMem.v
+    Info: Found entity 1: InstructionMem
+Info: Found 1 design units, including 1 entities, in source file Pc.v
+    Info: Found entity 1: Pc
+Info: Found 1 design units, including 1 entities, in source file Registers.v
+    Info: Found entity 1: Registers
+Info: Found 1 design units, including 1 entities, in source file SignExtender.v
+    Info: Found entity 1: SignExtender
+Info: Found 0 design units, including 0 entities, in source file headfile.v
+Info: Found 1 design units, including 1 entities, in source file cpu16.bdf
+    Info: Found entity 1: cpu16
+Info: Elaborating entity "cpu16" for the top level hierarchy
+Info: Elaborating entity "DataMem" for hierarchy "DataMem:inst3"
+Info: Elaborating entity "Control" for hierarchy "Control:inst2"
+Warning (10240): Verilog HDL Always Construct warning at Control.v(20): inferring latch(es) for variable "jump_adr", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "jump_adr[0]" at Control.v(20)
+Info (10041): Inferred latch for "jump_adr[1]" at Control.v(20)
+Info (10041): Inferred latch for "jump_adr[2]" at Control.v(20)
+Info (10041): Inferred latch for "jump_adr[3]" at Control.v(20)
+Info (10041): Inferred latch for "jump_adr[4]" at Control.v(20)
+Info: Elaborating entity "InstructionMem" for hierarchy "InstructionMem:inst4"
+Warning (10030): Net "Mem.data_a[15]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[14]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[13]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[12]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[11]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[10]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[9]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[8]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[7]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[6]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[5]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[4]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[3]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[2]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[1]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.data_a[0]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.waddr_a[4]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.waddr_a[3]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.waddr_a[2]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.waddr_a[1]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.waddr_a[0]" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Mem.we_a" at InstructionMem.v(7) has no driver or initial value, using a default initial value '0'
+Info: Elaborating entity "Pc" for hierarchy "Pc:inst5"
+Warning (10230): Verilog HDL assignment warning at Pc.v(27): truncated value with size 32 to match size of target (5)
+Info: Elaborating entity "alu" for hierarchy "alu:inst"
+Warning (10240): Verilog HDL Always Construct warning at alu.v(10): inferring latch(es) for variable "a", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "a[0]" at alu.v(44)
+Info (10041): Inferred latch for "a[1]" at alu.v(44)
+Info (10041): Inferred latch for "a[2]" at alu.v(44)
+Info (10041): Inferred latch for "a[3]" at alu.v(44)
+Info (10041): Inferred latch for "a[4]" at alu.v(44)
+Info (10041): Inferred latch for "a[5]" at alu.v(44)
+Info (10041): Inferred latch for "a[6]" at alu.v(44)
+Info (10041): Inferred latch for "a[7]" at alu.v(44)
+Info (10041): Inferred latch for "a[8]" at alu.v(44)
+Info (10041): Inferred latch for "a[9]" at alu.v(44)
+Info (10041): Inferred latch for "a[10]" at alu.v(44)
+Info (10041): Inferred latch for "a[11]" at alu.v(44)
+Info (10041): Inferred latch for "a[12]" at alu.v(44)
+Info (10041): Inferred latch for "a[13]" at alu.v(44)
+Info (10041): Inferred latch for "a[14]" at alu.v(44)
+Info (10041): Inferred latch for "a[15]" at alu.v(44)
+Info: Elaborating entity "Registers" for hierarchy "Registers:inst6"
+Info: Elaborating entity "select1" for hierarchy "select1:inst7"
+Info: Elaborating entity "SignExtender" for hierarchy "SignExtender:inst8"
+Warning: Latch alu:inst|a[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch alu:inst|a[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Latch Control:inst2|jump_adr[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[0]
+Warning: Latch Control:inst2|jump_adr[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[0]
+Warning: Latch Control:inst2|jump_adr[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Pc:inst5|p[4]
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ins[10]" is stuck at GND
+    Warning (13410): Pin "ins[6]" is stuck at GND
+    Warning (13410): Pin "ins[4]" is stuck at GND
+    Warning (13410): Pin "ins[3]" is stuck at GND
+    Warning (13410): Pin "ins[2]" is stuck at GND
+    Warning (13410): Pin "ins[1]" is stuck at GND
+Info: 64 registers lost all their fanouts during netlist optimizations. The first 64 are displayed below.
+    Info: Register "DataMem:inst3|mem~64" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~65" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~66" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~67" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~68" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~69" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~70" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~71" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~72" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~73" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~74" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~75" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~76" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~77" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~78" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~79" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~80" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~81" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~82" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~83" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~84" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~85" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~86" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~87" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~88" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~89" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~90" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~91" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~92" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~93" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~94" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~95" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~96" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~97" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~98" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~99" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~100" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~101" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~102" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~103" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~104" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~105" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~106" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~107" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~108" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~109" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~110" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~111" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~112" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~113" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~114" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~115" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~116" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~117" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~118" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~119" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~120" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~121" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~122" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~123" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~124" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~125" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~126" lost all its fanouts during netlist optimizations.
+    Info: Register "DataMem:inst3|mem~127" lost all its fanouts during netlist optimizations.
+Info: Implemented 680 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 74 output pins
+    Info: Implemented 604 logic cells
+Info: Generated suppressed messages file D:/下载/cpu16/cpu16.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 70 warnings
+    Info: Peak virtual memory: 234 megabytes
+    Info: Processing ended: Sun Sep 27 12:46:42 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/下载/cpu16/cpu16.map.smsg.
+
+
